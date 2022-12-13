@@ -1,7 +1,20 @@
 import 'package:ejemplo3/Helpers/searchDelegate.dart';
 
 import '../Helpers/exportClass.dart';
-
+import "../models/category.dart";
+class Swipe{
+  var images;
+  var name;
+  Swipe(this.images, this.name);
+}
+final swipe = [
+  Swipe('../assets/img/ceviche.jpg', 'Marina'),
+  Swipe('../assets/img/trago.jpg', 'Marina'),
+  Swipe('../assets/img/lomo2.jpg', 'Marina'),
+  Swipe('../assets/img/parrilla.jpg', 'Marina'),
+  Swipe('../assets/img/ensalada.jpg', 'Marina')
+];
+ 
 class Inicios extends StatefulWidget {
 
   Inicios({super.key});

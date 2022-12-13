@@ -1,4 +1,5 @@
 import 'package:ejemplo3/Helpers/exportClass.dart';
+import 'package:ejemplo3/models/category.dart';
 
 class SearchDeleguetaC extends SearchDelegate{
   List<String> searchItems =[
@@ -29,7 +30,7 @@ class SearchDeleguetaC extends SearchDelegate{
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-      onPressed: (){close(context, Category("", "") );}
+      onPressed: (){close(context, Categorys() );}
       , icon: const Icon(Icons.arrow_back));
   }
 
@@ -41,21 +42,7 @@ class SearchDeleguetaC extends SearchDelegate{
         filter.add(category);
       }
     }
-    return ListView.builder(
-      itemCount: Car.length,
-      itemBuilder: (context, index) {
-        var resultado = Car[index];
-        return ListTile(
-          leading: FadeInImage(
-            image: AssetImage(resultado.images), placeholder:const AssetImage("images/SpinnerImg.gif") ,
-            width: 100,
-          ),
-          title: Text(resultado.nombre),
-          
-          
-        );
-      },
-    );
+    return Container();
 
   }
 
@@ -67,20 +54,7 @@ class SearchDeleguetaC extends SearchDelegate{
         filter.add(category);
       }
     }
-    return ListView.builder(
-      itemCount: Car.length,
-      itemBuilder: (context, index) {
-        var resultado = Car[index];
-        return ListTile(
-            leading: FadeInImage(
-            image: AssetImage(resultado.images), placeholder:const AssetImage("images/SpinnerImg.gif") ,
-            height: 100,
-          ),
-          title: Text(resultado.nombre),
-        );
-      },
-    );
+    return Container();
   }
-
 
 }

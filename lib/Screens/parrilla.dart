@@ -9,7 +9,7 @@ class Parrillas extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Comida Parrilla"),
+          title: const Text("Parrilla"),
           automaticallyImplyLeading: true,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),

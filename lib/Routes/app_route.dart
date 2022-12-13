@@ -7,12 +7,12 @@ class AppRouters {
   static Map<String, Widget Function(BuildContext)> routes = {
     "home": (BuildContext context) => Inicio(),
     "perfil": (BuildContext context) => Perfil(),
-    "criollos": (BuildContext context) => const Criollos(),
-    "parrilla": (BuildContext context) => const Parrillas(),
-    "postres": (BuildContext context) => const Postres(),
-    "entradas": (BuildContext context) => const Entrada(),
-    "tragos": (BuildContext context) => const Trago(),
+    "Criolla": (BuildContext context) => const Criollos(),
+    "Parrilla": (BuildContext context) => const Parrillas(),
+    "Postres": (BuildContext context) => const Postres(),
+    "Entradas": (BuildContext context) => const Entrada(),
+    "Tragos": (BuildContext context) => const Trago(),
     "categorias": (BuildContext context) => Categorias(),
-    "marina": (BuildContext context) => const Marina()
+    "Marina": (BuildContext context) => const Marina()
   };
 }

@@ -2,9 +2,8 @@
 export 'package:flutter/material.dart';
 export 'package:card_swiper/card_swiper.dart';
 
-//Atributos del Heroe
-
-export '../models/category.dart';
+//MODELS
+//export '../models/category.dart';
 export '../models/platos.dart';
 export '../models/criollo.dart';
 export '../models/marino.dart';

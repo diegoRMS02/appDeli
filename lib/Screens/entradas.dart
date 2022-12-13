@@ -9,7 +9,7 @@ class Entrada extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Comida Criolla"),
+          title: const Text("Entradas"),
           automaticallyImplyLeading: true,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),

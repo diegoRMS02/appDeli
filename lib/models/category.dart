@@ -1,22 +1,31 @@
-class Category {
-  String nombre;
-  String images;
-  Category(this.images, this.nombre);
+
+class Categorys {
+  var id;
+  var name;
+  var image;
+  Categorys({this.id, this.name, this.image});
+
+  factory Categorys.fromJson(Map<String, dynamic> json){
+    return  Categorys(
+      id: json["_id"],
+      name: json["name"],
+      image: json["image"]);
+  }
 }
 
-final Car = [
-  Category('../assets/img/marina.jfif', 'Marina'),
-  Category('../assets/img/criolla.jpg', 'Criolla'),
-  Category('../assets/img/pariila2.jfif', 'Parrilla'),
-  Category('../assets/img/postres3.jpg', 'Postres'),
-  Category('../assets/img/entrada.jpeg', 'Entradas'),
-  Category('../assets/img/tragos.jpg', 'Tragos'),
-];
+/* class Category {
+  var id;
+  var name;
+  var image;
+  Category({this.id, this.name, this.image} );
 
-final swipe = [
-  Category('../assets/img/ceviche.jpg', 'Marina'),
-  Category('../assets/img/trago.jpg', 'Marina'),
-  Category('../assets/img/lomo2.jpg', 'Marina'),
-  Category('../assets/img/parrilla.jpg', 'Marina'),
-  Category('../assets/img/ensalada.jpg', 'Marina')
-];
+  factory Category.fromJson(Map<String, dynamic> json) {
+    return Category(
+        id: json["_id"],
+        name: json["name"],
+        image: json["images"],
+    );
+  }
+}
+
+ */
