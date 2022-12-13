@@ -25,3 +25,4 @@ export '../Screens/entradas.dart';
 
 //Service
 export '../Service/Service.dart';
+export '../Helpers/searchDelegate.dart';

@@ -1,3 +1,5 @@
+import 'package:ejemplo3/Helpers/searchDelegate.dart';
+
 import '../Helpers/exportClass.dart';
 
 class Inicios extends StatefulWidget {
@@ -76,7 +78,9 @@ class _IniciosState extends State<Inicios>{
       appBar: AppBar(
         title: const Text("Sazon Criolla"),
         actions: <Widget>[
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search))
+          IconButton(onPressed: () {
+            showSearch(context: context, delegate: SearchDeleguetaC());
+          }, icon: const Icon(Icons.search))
         ],
       ),
       /*Menu inicio */
