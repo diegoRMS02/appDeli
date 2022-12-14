@@ -14,7 +14,7 @@ class Categorias extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.pushNamed(context, "home"),
           )),
-      body: getcategorie(context, listCategories()));  
+      body: getcategorie(context, listCategories("")));  
   }
 }
 Widget getcategorie(BuildContext context, Future<List<Categorys>> futurecategorie) {

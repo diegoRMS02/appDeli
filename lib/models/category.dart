@@ -1,15 +1,16 @@
 
 class Categorys {
   var id;
-  var name;
   var image;
-  Categorys({this.id, this.name, this.image});
+   var name;
+  Categorys({this.id, this.image,this.name});
 
   factory Categorys.fromJson(Map<String, dynamic> json){
     return  Categorys(
       id: json["_id"],
-      name: json["name"],
-      image: json["image"]);
+      image: json["image"],
+      name: json["name"]);
+      
   }
 }
 
