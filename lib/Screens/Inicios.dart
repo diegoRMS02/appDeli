@@ -8,11 +8,11 @@ class Swipe{
   Swipe(this.images, this.name);
 }
 final swipe = [
-  Swipe('../assets/img/ceviche.jpg', 'Marina'),
-  Swipe('../assets/img/trago.jpg', 'Marina'),
-  Swipe('../assets/img/lomo2.jpg', 'Marina'),
-  Swipe('../assets/img/parrilla.jpg', 'Marina'),
-  Swipe('../assets/img/ensalada.jpg', 'Marina')
+  Swipe('../assets/img/ceviche.jpg', 'Ceviche'),
+  Swipe('../assets/img/trago.jpg', 'Tragos'),
+  Swipe('../assets/img/lomo2.jpg', 'Lomo Saltado'),
+  Swipe('../assets/img/parrilla.jpg', 'Parrilla'),
+  Swipe('../assets/img/ensalada.jpg', 'Ensalada')
 ];
  
 class Inicios extends StatefulWidget {
@@ -29,8 +29,6 @@ class _IniciosState extends State<Inicios>{
 
   final menuOpciones = [
     "Perfil",
-    "Categorias",
-    "Carrito",
     "Favoritos",
     "Ayuda",
     "Configuracion",
@@ -92,7 +90,7 @@ class _IniciosState extends State<Inicios>{
         title: const Text("Sazon Criolla"),
         actions: <Widget>[
           IconButton(onPressed: () {
-            showSearch(context: context, delegate: SearchDeleguetaC());
+            showSearch(context: context, delegate: SearchDeleguetaC(categoriess));
           }, icon: const Icon(Icons.search))
         ],
       ),

@@ -1,4 +1,6 @@
 import 'package:ejemplo3/Screens/Inicios.dart';
+import 'package:ejemplo3/Screens/categorias.dart';
+import 'package:ejemplo3/models/category.dart';
 
 import '../Helpers/exportClass.dart';
 
@@ -15,8 +17,8 @@ class _InicioState extends State<Inicio> {
   int select_page = 0;
   List<Widget> pages = [
     Inicios(),
-    const Marina(),
-    const Parrillas(),
+    Categorias(),
+    ScreenCart(),
   ];
 
   @override
@@ -35,7 +37,7 @@ class _InicioState extends State<Inicio> {
         currentIndex: select_page,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home),label: "Inicio"),
-          BottomNavigationBarItem(icon: Icon(Icons.search),label: "Buscar"),
+          BottomNavigationBarItem(icon: Icon(Icons.category),label: "Categorias"),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: "Carrito"),
         ]
         ),

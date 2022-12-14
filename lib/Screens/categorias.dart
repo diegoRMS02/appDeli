@@ -7,6 +7,7 @@ class Categorias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange,
       appBar: AppBar(
           title: const Text("Categorias"),
           automaticallyImplyLeading: true,
@@ -14,11 +15,15 @@ class Categorias extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.pushNamed(context, "home"),
           )),
-      body: getcategorie(context, listCategories("")));  
+      body: getcategorie(context, listCategories("")),
+      
+      
+      );
+        
   }
 }
 Widget getcategorie(BuildContext context, Future<List<Categorys>> futurecategorie) {
-          return FutureBuilder(
+      return FutureBuilder(
       future: futurecategorie,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
@@ -54,6 +59,63 @@ Widget categorieList(List<Categorys> categorie) {
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: ((context, index) {
           return Container(
+            padding: EdgeInsets.all(15.0),
+            child:  Card(
+            
+            child: InkWell(
+              onTap: (){} ,
+              splashColor: Colors.green,
+              child: Center(
+                child: Column(
+                  children: <Widget>[
+                    Image.asset(categorie[index].image),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(categorie[index].name),
+                      FloatingActionButton(
+                        elevation: 1,
+                          hoverColor: Colors.red,
+                          onPressed: ()  {
+                                switch (categorie[index].name) {
+                                  case "Marina":
+                                    Navigator.pushNamed(context, "Marina");
+
+                                    break;
+                                  case "Criolla":
+                                    Navigator.pushNamed(context, "Criolla");
+
+                                    break;
+                                  case "Parrilla":
+                                    Navigator.pushNamed(context, "Parrilla");
+
+                                    break;
+                                  case "Postres":
+                                    Navigator.pushNamed(context, "Postres");
+
+                                    break;
+                                  case "Entradas":
+                                    Navigator.pushNamed(context, "Entradas");
+
+                                    break;
+                                  default:
+                                    Navigator.pushNamed(context, "Tragos");
+                                }
+                          },
+                          child: const Icon(Icons.arrow_right, )),
+                    ],
+                  ),
+
+                  ],
+                ),
+              ),
+            ),
+          )
+          );
+          
+          
+          /* Container(
             margin: const EdgeInsets.all(10),
             padding: EdgeInsets.only(top: 0),
             decoration: BoxDecoration(
@@ -108,7 +170,7 @@ Widget categorieList(List<Categorys> categorie) {
                 ],
               ),
             ),
-          );
+          ); */
         })),
   );
 }

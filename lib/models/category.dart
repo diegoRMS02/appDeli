@@ -13,7 +13,22 @@ class Categorys {
       
   }
 }
+class Categories{
+  var name;
+  var image;
+  Categories(this.name,this.image);
+}
 
+final categoriess = [
+  Categories('Marina', '../assets/img/marina.jfif'),
+  Categories('Criolla', '../assets/img/criolla.jpg'),
+  Categories('Parrilla', '../assets/img/pariila2.jfif'),
+  Categories('Postres', '../assets/img/postres3.jpg'),
+  Categories('Entradas', '../assets/img/entrada.jpeg'),
+  Categories('Tragos', '../assets/img/tragos.jpg'),
+
+];
+ 
 /* class Category {
   var id;
   var name;

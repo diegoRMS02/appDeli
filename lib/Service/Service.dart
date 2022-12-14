@@ -8,7 +8,7 @@ import "../models/category.dart";
 //marino
 Future<List<Marino>> ListMarino() async {
   final response =
-      await http.get(Uri.parse("http://192.168.1.14:4000/api/marino"));
+      await http.get(Uri.parse("http://192.168.0.105:4000/api/marino"));
 
   return compute(decodeJson, response.body);
 }
@@ -23,7 +23,7 @@ List<Marino> decodeJson(String responseBody) {
 //Criollo
 Future<List<Criollo>> listCriollo() async {
   final response =
-      await http.get(Uri.parse("http://192.168.1.14:4000/api/criollo"));
+      await http.get(Uri.parse("http://192.168.0.105:4000/api/criollo"));
 
   return compute(decodeJson2, response.body);
 }
@@ -39,7 +39,7 @@ List<Criollo> decodeJson2(String responseBody) {
 //Parrilla
 Future<List<Parrilla>> listParrilla() async {
   final response =
-      await http.get(Uri.parse("http://192.168.1.14:4000/api/parrilla"));
+      await http.get(Uri.parse("http://192.168.0.105:4000/api/parrilla"));
 
   return compute(decodeJson3, response.body);
 }
@@ -55,7 +55,7 @@ List<Parrilla> decodeJson3(String responseBody) {
 //Postres
 Future<List<Postre>> listPostres() async {
   final response =
-      await http.get(Uri.parse("http://192.168.1.14:4000/api/postres"));
+      await http.get(Uri.parse("http://192.168.0.105:4000/api/postres"));
 
   return compute(decodeJson4, response.body);
 }
@@ -71,7 +71,7 @@ List<Postre> decodeJson4(String responseBody) {
 //Entradas
 Future<List<Entradas>> listEntradas() async {
   final response =
-      await http.get(Uri.parse("http://192.168.1.14:4000/api/entradas"));
+      await http.get(Uri.parse("http://192.168.0.105:4000/api/entradas"));
 
   return compute(decodeJson5, response.body);
 }
@@ -87,7 +87,7 @@ List<Entradas> decodeJson5(String responseBody) {
 //Tragos
 Future<List<Tragos>> listTragos() async {
   final response =
-      await http.get(Uri.parse("http://192.168.1.14:4000/api/tragos"));
+      await http.get(Uri.parse("http://192.168.0.105:4000/api/tragos"));
 
   return compute(decodeJson6, response.body);
 }
@@ -102,7 +102,7 @@ List<Tragos> decodeJson6(String responseBody) {
 
 Future<List<Categorys>> listCategories( String name) async {
   final response =
-      await http.get(Uri.parse("http://192.168.1.14:4000/api/categorie"));
+      await http.get(Uri.parse("http://192.168.0.105:4000/api/categorie"));
 
   return compute(decodeJson7, response.body);
 }
@@ -119,7 +119,7 @@ List<Categorys> decodeJson7(String responseBody) {
       List<Categorys> finalt = [];
 
       final response =
-        await http.get(Uri.parse("http://192.168.1.14:4000/api/categorie/"));
+        await http.get(Uri.parse("http://192.168.0.105:4000/api/categorie/"));
       if (response.statusCode == 200) {
         String bodyResponse = utf8.decode(response.bodyBytes);
         final bodyJson = jsonDecode(bodyResponse);
@@ -142,7 +142,7 @@ List<Categorys> decodeJson7(String responseBody) {
       return finalt; */
       try{
         final response =
-        await http.get(Uri.parse("http://192.168.1.14:4000/api/categorie/"));
+        await http.get(Uri.parse("http://192.168.0.105:4000/api/categorie/"));
         
         compute(decodeJson7, response.body);
         

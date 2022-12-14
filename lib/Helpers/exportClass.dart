@@ -20,6 +20,7 @@ export '../Screens/parrilla.dart';
 export '../Screens/tragos.dart';
 export '../Screens/postres.dart';
 export '../Screens/entradas.dart';
+export "../Screens/Cart.dart";
 //Routes
 
 //Service

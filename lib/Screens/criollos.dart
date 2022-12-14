@@ -39,7 +39,7 @@ Widget getCriollo(BuildContext context, Future<List<Criollo>> futureCriollo) {
               );
             }
             return (snapshot.data != null)
-                ? criolloList(snapshot.data)
+                ? criolloList(snapshot.data, context)
                 : Container(
                     alignment: Alignment.center,
                     child: const Center(child: Text("Sin datos")),
@@ -51,48 +51,63 @@ Widget getCriollo(BuildContext context, Future<List<Criollo>> futureCriollo) {
 }
 
 //pinta los datos en la pantalla
-Widget criolloList(List<Criollo> criollo) {
+Widget criolloList(List<Criollo> criollo, BuildContext context) {
   return Container(
-    margin: const EdgeInsets.all(20),
-    child: GridView.builder(
-        itemCount: criollo.length,
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemBuilder: ((context, index) {
-          return Container(
-            margin: const EdgeInsets.all(10),
-            padding: EdgeInsets.only(top: 0),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10), color: Colors.white),
-            child: GestureDetector(
-              onTap: () {
-                print('ok');
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Image.network(
-                    criollo[index].image!,
+             padding: const EdgeInsets.all(10),
+            child: GridView.builder(
+              itemCount: criollo.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: MediaQuery.of(context).size.width / (MediaQuery.of(context).size.height / 1.3),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 2
+                ), 
+              itemBuilder: (context, index){
+                return Container(
+                  margin: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(1),
+                  decoration:  BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    boxShadow: [
+                      const BoxShadow(
+                        color: Color(0x000005cc),
+                        blurRadius: 30,
+                        offset: Offset(10,10)
+                      )
+                    ]
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(criollo[index].name),
-                      Text("${criollo[index].price}"),
+                  child: Column(
+                  children: [
+                    Image.network(criollo[index].image, height: 200, width: 210,),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(criollo[index].name, style: const TextStyle(fontWeight: FontWeight.bold),),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Text("S/${criollo[index].price}", style: const TextStyle(fontSize: 16),),
+
+                      ),
                       FloatingActionButton(
-                          hoverColor: Colors.red,
-                          onPressed: () {
-                            print('ok');
-                          },
-                          child: const Icon(Icons.shop_2)),
-                    ],
-                  )
-                ],
-              ),
-            ),
+                        onPressed: () {
+                          
+                        },
+                        child: const Icon(Icons.add_shopping_cart),
+                      )
+                        ],
+                    ),
+                    
+
+                  ],
+                )
+                );
+              } 
+              ), 
           );
-        })),
-  );
+
 }
 
 
